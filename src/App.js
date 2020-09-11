@@ -43,7 +43,6 @@ function App() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
-        console.log(authUser);
         setUser(authUser);
       } else {
         setUser(null);
@@ -157,7 +156,7 @@ function App() {
         </div>
       </Modal>
 
-      <div class="app__header">
+      <div className="app__header">
         <img
           className="app__headerImage"
           src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
@@ -166,22 +165,22 @@ function App() {
         {user ? (
         <Button onClick={() => auth.signOut()}>Logout</Button>
         ): (
-          <div class="app__loginContainer">
+          <div className="app__loginContainer">
             <Button onClick={() => setOpenSignIn(true)}>Login</Button>
             <Button onClick={() => setOpen(true)}>Sign up</Button>
           </div>
         )}
       </div>
 
-      <div class="app__posts">
-        <div class="app__postsLeft">
+      <div className="app__posts">
+        <div className="app__postsLeft">
         {
           posts.map(({id, post}) => (
             <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
           ))
         }
         </div>
-        <div class="app__postsRight">
+        <div className="app__postsRight">
           <InstagramEmbed
             url='https://instagr.am/p/Zw9o4/'
             maxWidth={320}

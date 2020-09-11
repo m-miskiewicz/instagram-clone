@@ -39,7 +39,7 @@ function Post({ postId, user, username, caption, imageUrl }) {
 
     return (
         <div className="post">
-            <div class="post__header">
+            <div className="post__header">
                 <Avatar className="post__avatar" alt="" src="/static/images/avatar/1.jpg" />
                 <h3>{username}</h3>
             </div>
@@ -47,7 +47,7 @@ function Post({ postId, user, username, caption, imageUrl }) {
             <img className="post__image" src={imageUrl} alt="" />
             <h4 className="post__text"><strong>{username}</strong> {caption}</h4>
 
-            <div class="post__comments">
+            <div className="post__comments">
                 {comments.map((comment) => (
                     <p>
                         <strong>{comment.username}</strong> {comment.text}
